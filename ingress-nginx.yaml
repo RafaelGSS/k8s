@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "\"false\""
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /one
+        backend:
+          serviceName: ms-one-service
+          servicePort: 80
+
