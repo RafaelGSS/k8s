@@ -3,13 +3,14 @@ kind: Ingress
 metadata:
   name: ingress-nginx
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "\"false\""
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: ms-one.local.info
+    http:
       paths:
-      - path: /one
+      - path: /
         backend:
           serviceName: ms-one-service
           servicePort: 80
-
