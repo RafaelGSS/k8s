@@ -14,3 +14,10 @@ spec:
         backend:
           serviceName: ms-one-service
           servicePort: 80
+  - host: ms-two.local.info
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ms-two-service
+          servicePort: 80
