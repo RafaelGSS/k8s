@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: ms-two-deployment
 spec:
+  minReadySeconds: 5
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: ms-two
